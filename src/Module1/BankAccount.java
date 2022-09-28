@@ -1,5 +1,4 @@
 package Module1;
-import java.util.Scanner;
 
 public class BankAccount {
     /*
@@ -47,7 +46,12 @@ public class BankAccount {
     }
 
     public void withdrawal(double money) {
+        if (money > getBalance()) {
+            CheckingAccount.processWithdrawal(money);
+        }
+        else {
         this.balance -= money;
+        }
     }
 
     public void accountSummary() {
